@@ -1,0 +1,51 @@
+<!doctype html>
+<html ng-app="myApp">
+    <head>
+        <title>Socket.IO Login</title>
+        <link rel="stylesheet" href="/css/style.css">
+        <script src="/lib/angular.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="/js/login.js"></script>
+        <script src="/js/app.js"></script>
+    </head>
+    <body>
+        <div id="login">
+            <p>Enter your name:</p>
+            <p id="loginError"></p>
+            <form id="setUsername">
+                <div><input id="username" placeholder="Username" ng-model="setName" /></div>
+                <div><input type="password" id="password" placeholder="Password" ng-model="setPass" /></div>
+                <div><button type="submit"class="btn">Login</button></div>
+            </form>
+            <form id="toCreation">
+                <button type="submit" class="btn">Create new Account</button>
+            </form>
+        </div>
+        <div id="createUser">
+            <p>Create a new user account:</p>
+            <p id="creationError"></p>
+            <form id="makeAccount">
+                <div><input id="newUsername" placeholder="Username" ng-model="setName" /></div>
+                <div><input type="password" id="password1" placeholder="Password" ng-model="setPass1" /></div>
+                <div><input type="password" id="password2" placeholder="Confirm Password" ng-model="setPass2" /></div>
+                <div><button type="submit" class="btn">Create Account</button></div>
+            </form>
+            <form id="backtoLogin">
+                <button type="submit" class="btn">Back</button>
+            </form>
+        </div>
+        <div id="chat" ng-controller="mainController">
+            <div id="chatHeader">
+                <form id="logout">
+                    <button type="submit" class="btn">Logout</button>
+                </form>
+            </div>
+            <div id="messageBox"><ul id="messages"></ul></div>
+            <div id="chatInput">
+                <input id="m" ng-model="message" autocomplete="off" />
+                <button ng-click="send()">Send</button>
+            </div>
+        </div>
+    </body>
+</html>
